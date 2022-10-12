@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>Account Sign-Up</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="left">
+          <h1>SIGN UP</h1>
+          <p>Let's Create Your Account</p>
+        </div>
+        <div class="right">
+          <h1>Create Account</h1>
+          <form action="">
+            <input placeholder="Email" type="text" name="email" id="signup-email">
+            <input placeholder="Name" type="text" name="name" id="signup-name">
+            <input placeholder="Password" type="password" name="password" id="signup-password">
+            <input id="signup-btn" type="button" value="SIGN UP">
+          </form>
+          <p>Already Have an Account?<a href="../../index.html"> Log-In Here</a></p>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="../controllers/authSignUp.js"></script>
+  </body>
+</html>
