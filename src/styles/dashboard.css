@@ -189,11 +189,30 @@ input[type="radio"]{
     /* -webkit-appearance: none; */
 }
 
-input[type="text"], .transaction-input > form > select {
+input[type="text"], .contain > select {
     height: 40px;
     padding: 10px;
     /* box-shadow: 0px 6px 22px 0px #ffffff ; */
 }
+
+input[type="text"]{
+    width: 60%;
+    border-right: none;
+    border: none;
+    box-shadow: 0px 6px 22px 0px #0000001F;
+}
+
+.contain > select {
+    border-left: none;
+    border: none;
+    box-shadow: 0px 6px 22px 0px #0000001F;   
+}
+
+.contain {
+    background-color: #ffffff;
+}
+
+
 
 .transaction-input > h2 {
     font-weight: 500;
@@ -202,6 +221,7 @@ input[type="text"], .transaction-input > form > select {
 
 .left * {
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .category {
@@ -295,7 +315,7 @@ input[type="text"], .transaction-input > form > select {
   .close {
     position: absolute;
     top: 20px;
-    right: 35px;
+    right: 40px;
     color: #aaa;
     /* float: right; */
     font-size: 36px;

@@ -31,7 +31,7 @@ function signUp() {
         const errorCode = error.code;
         const errorMessage = error.message;
         alert("Signup Failed")
-        console.log(error)
+        // console.log(error)
     });
 }
 

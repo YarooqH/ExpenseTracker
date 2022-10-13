@@ -16,20 +16,22 @@
         <div class="transaction-input">
             <h2>Add Transactions</h2>
             <form action="">
-                <input placeholder="Enter Amount" type="text" name="transaction" id="transaction">
-                <select name="method" id="transaction">
-                    <option value="cash">Cash</option>
-                    <option value="saving">Savings</option>
-                </select>
+                <div class="contain">
+                    <input placeholder="Enter Amount" type="text" name="transaction" id="transaction">
+                    <select name="method" id="transaction">
+                        <option value="cash">Cash</option>
+                        <option value="saving">Savings</option>
+                    </select>
+                </div>
                 <input type="radio" name="payment" id="card">
                 <label for="card">
                     <img src="../assets/Income.png" alt="income">
-                    <span>Savings</span>
+                    <span>Expense</span>
                 </label>
                 <input type="radio" name="payment" id="cash">
                 <label for="cash">
                     <img src="../assets/Expense.png" alt="income">
-                    <span>Cash</span>
+                    <span>Income</span>
                 </label>      
             </form>
         </div>
@@ -44,6 +46,7 @@
                 <label for="shopping">Shopping</label><br>
                 <input type="radio" id="family" name="category" value="family">
                 <label for="family">Family</label><br>
+                <!-- <button>+</button> -->
             </form>
         </div>
         <button>Add</button>
@@ -64,19 +67,19 @@
         </div>
         <div class="details">
             <h2>Current Balance</h2>
-            <h1>PKR 20000</h1>
+            <h1 id="cur-balance">PKR 20000</h1>
             <div class="mini-details">
                 <div class="cash">
                     <h3>Cash</h3>
-                    <h4>20000</h4>
+                    <h4 id="cur-cash">0</h4>
                 </div>
                 <div class="bank">
                     <h3>Bank</h3>
-                    <h4>10000</h4>
+                    <h4>0</h4>
                 </div>
                 <div class="saving">
                     <h3>Savings</h3>
-                    <h4>0</h4>
+                    <h4 id="cur-saving">0</h4>
                 </div>
             </div>
         </div>
@@ -88,16 +91,16 @@
             <div class="body">
                 <div class="sub-body">
                     <h3>Cash</h3>
-                    <h3>PKR 10000</h3>
+                    <h3 class="cur-cash">PKR 10000</h3>
                 </div>
                 <div class="sub-body">
                     <h3>Savings</h3>
-                    <h3>PKR 0</h3>
+                    <h3 class="cur-saving">PKR 0</h3>
                 </div>
-                <div class="sub-body">
+                <!-- <div class="sub-body">
                     <h3>Meezan Bank</h3>
                     <h3>PKR 10000</h3>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="chart-container">
