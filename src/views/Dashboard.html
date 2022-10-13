@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/dashboard.css">
-    <script defer src="../controllers/dashboard.js"></script>
+    <script deferc type="module" src="../controllers/dashboard.js"></script>
     <title>Expense Dashboard</title>
 </head>
 <body>
@@ -13,15 +16,21 @@
         <div class="transaction-input">
             <h2>Add Transactions</h2>
             <form action="">
-                <input placeholder="Expense" type="text" name="transaction" id="transaction">
-                <div class="expense">
-                    <input type="radio" id="expense" name="type" value="Expense">
-                    <label for="expense">Expense</label><br>
-                </div>
-                <div class="income">
-                    <input type="radio" id="income" name="type" value="Income">
-                    <label for="income">Income</label><br>
-                </div>
+                <input placeholder="Enter Amount" type="text" name="transaction" id="transaction">
+                <select name="method" id="transaction">
+                    <option value="cash">Cash</option>
+                    <option value="saving">Savings</option>
+                </select>
+                <input type="radio" name="payment" id="card">
+                <label for="card">
+                    <img src="../assets/Income.png" alt="income">
+                    <span>Savings</span>
+                </label>
+                <input type="radio" name="payment" id="cash">
+                <label for="cash">
+                    <img src="../assets/Expense.png" alt="income">
+                    <span>Cash</span>
+                </label>      
             </form>
         </div>
         <div class="category">
@@ -41,20 +50,20 @@
         <div class="history">
             <h3>Transactions History</h3>
             <ul>
-                <li> <strong>Home</strong>  Meezan Bank  10/Nov/2021  Rs.15000</li>
-                <li> <strong>Home</strong>  Meezan Bank  10/Nov/2021  Rs.15000</li>
-                <li> <strong>Home</strong>  Meezan Bank  10/Nov/2021  Rs.15000</li>
-                <li> <strong>Home</strong>  Meezan Bank  10/Nov/2021  Rs.15000</li>
+                <li> <strong>Home</strong> </li>
+                <li> Meezan Bank </li>
+                <li> 10/Nov/2021 </li>
+                <li> Rs. 15000 </li>
             </ul>
         </div>
     </div>
     <div class="right">
         <div class="nav">
-            <h1>Name</h1>
-            <img src="#" alt="pfp">
+            <h3>Name</h3>
+            <img src="../assets/user.png" alt="pfp">
         </div>
         <div class="details">
-            <h2>What You Have</h2>
+            <h2>Current Balance</h2>
             <h1>PKR 20000</h1>
             <div class="mini-details">
                 <div class="cash">
@@ -74,7 +83,7 @@
         <div class="accounts">
             <div class="heading">
                 <h3>All Accounts</h3>
-                <a href="#">Add More +</a>
+                <a id="myBtn" href="#">Add More +</a>
             </div>
             <div class="body">
                 <div class="sub-body">
@@ -96,5 +105,21 @@
             <div class="chart"></div>
         </div>
     </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="../assets/modal.png" alt="modal">
+            <h3>Create New Account</h3>
+            <p>More Accounts to Manage More Explicitly</p>
+            <div class="modal-input">
+                <form action="">
+                    <input type="text" placeholder="Enter Your Account Name" name="account-name" id="account-name">
+                    <input type="number" placeholder="Enter Amount" name="account-amount" id="account-amount">
+                    <input type="button" value="Create Account">
+                </form>
+            </div>
+          
+        </div>
+      </div>
 </body>
 </html>

@@ -15,14 +15,13 @@ function signIn() {
     userEmail = signInEmail.value;
     userPass = signInPassword.value;
 
-    
+    console.log('signin' + userEmail)
+    sessionStorage.setItem('userEmail', userEmail);
+
     signInWithEmailAndPassword(auth, userEmail, userPass)
     .then((userCredential) => {
-        // console.log(userCredential);
-        // console.log(window.location);
-        // console.log(location)
         location.href = './src/views/Dashboard.html';
-        alert(userCredential.user.email + " has successfully logged in.")
+        // alert(userCredential.user.email + " has successfully logged in.")
     })
     .catch((error) => {
         const errorCode = error.code;

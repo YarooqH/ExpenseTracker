@@ -1,3 +1,3 @@
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { staticUserEmail } from './authSignIn'
 
-const auth = getAuth();
+console.log(staticUserEmail);
