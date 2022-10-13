@@ -153,13 +153,24 @@ body {
 
 .body {
     border-top: 2px solid #ffffff;
-    max-height: 100px;
+    min-height: 200px;
     overflow-y: scroll;
+}
+
+.heading > h3, .sub-body > h3 {
+    font-weight: 500;
+    /* text-align: left; */
+}
+
+.heading > a {
+    /* font-weight: 700; */
+    font-size: 16px;
 }
 
 .sub-body {
     display: flex;
     justify-content: space-between;
+    /* text-align: left; */
 }
 
 .right * {

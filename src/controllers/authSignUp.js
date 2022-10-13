@@ -1,9 +1,9 @@
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, getFirestore, setDoc, Timestamp } from "firebase/firestore";
-import { app } from './firebaseInit'
+import { app } from './firebaseInit';
 // import app from './firebaseInit.js'
 
-const auth = getAuth();
+const auth = getAuth(app);
 
 let signUpEmail = document.querySelector("#signup-email");
 let signUpPassword = document.querySelector("#signup-password");
@@ -24,8 +24,6 @@ function signUp() {
 
     createUserWithEmailAndPassword(auth, userEmail, userPass)
     .then((userCredential) => {
-        // console.log(userCredential);
-        // const user = userCredential.user;
         addUser();
         alert("Your account has been successfully created");
     })
@@ -40,6 +38,7 @@ function signUp() {
 const addUser = async () => {
     let db = getFirestore(app);
     await setDoc(doc(db, "user", dbUserName), {
-        balance: [{method: "Cash", "balance": 0}, {method:"Savings", balance: 0}]
-      });
+        balance: [{method: "Cash", balance: 0}, {method:"Savings", balance: 0}],
+        category: ["Home", "Shopping", "Gifts", "Mobile", "Family"]
+    });
 }

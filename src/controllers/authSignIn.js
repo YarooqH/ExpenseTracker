@@ -1,7 +1,8 @@
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
-import app from './firebaseInit.js'
+import { app } from './firebaseInit'
+// import app from './firebaseInit'
 
-const auth = getAuth();
+const auth = getAuth(app);
 
 let signInEmail = document.querySelector("#signin-email");
 let signInPassword = document.querySelector("#signin-password");
