@@ -152,7 +152,8 @@ const getBank = async () => {
     if(bankData.length > 0){
       let html = '';
       bankData.forEach((bank) => {
-        html += `<div class="sub-body">
+        html += `
+        <div class="sub-body">
         <h3>${bank.bankName}</h3>
         <h3 class="cur-${bank.bankName.toLowerCase()}">${'PKR ' + bank.bankAmount}</h3>
     </div>`
@@ -284,7 +285,6 @@ const expandCategory = (userData) => {
     html += `<input type="radio" id="${data.toLowerCase()}" name="category" value="${data}">
     <label for="${data}">${data}</label><br>`
   })
-
   document.querySelector('.cat-container').innerHTML = html;
 }
 
