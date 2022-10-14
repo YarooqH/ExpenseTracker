@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script deferc type="module" src="../controllers/dashboard.js"></script>
+    <script defer type="module" src="../controllers/dashboard.js"></script>
     <title>Expense Dashboard</title>
 </head>
 <body>
@@ -27,50 +27,20 @@
                     <div class="pay-container">
                         <input type="radio" name="payment" checked id="expense" value="Expense">
                             <label for="expense">
-                                    <!-- <img src="../assets/Expense.png" alt="expense"> -->
                                     <span>Expense</span>
                             </label>
                             
                             <input type="radio" name="payment" id="income" value="Income">
                             <label for="income">
-                                    <!-- <img src="../assets/Income.png" alt="income"> -->
                                     <span>Income</span>
                             </label>      
                     </div>
                 </div>
-                <!-- <div class="payment-container">
-                    <form action="">
-                        <input type="radio" name="payment" checked id="expense">
-                        <label for="expense">
-                            <div class="expense">
-                                <img src="../assets/Expense.png" alt="expense">
-                                <span>Expense</span>
-                            </div>
-                        </label>
-                        
-                        <input type="radio" name="payment" id="income">
-                        <label for="income">
-                            <div class="income">
-                                <img src="../assets/Income.png" alt="income">
-                                <span>Income</span>
-                            </div>
-                        </label>      
-                    </form>
-                </div> -->
         </div>
         <div class="category">
             <h2>Select Category</h2>
+            <!-- <input type="button" value="Add Category"> -->
             <div class="cat-container"></div>
-            <!-- <form action="">
-                <input type="radio" id="home" name="category" value="Home" checked>
-                <label for="home">Home</label><br>
-                <input type="radio" id="office" name="category" value="office">
-                <label for="office">Office</label><br>
-                <input type="radio" id="shopping" name="category" value="shopping">
-                <label for="shopping">Shopping</label><br>
-                <input type="radio" id="family" name="category" value="family">
-                <label for="family">Family</label><br>
-            </form> -->
         </div>
         <button id="transact-btn">Add</button>
         <div class="history">
@@ -123,10 +93,6 @@
                     <h3 class="cur-savings">PKR 0</h3>
                 </div>
                 <div id="body"></div>
-                <!-- <div class="sub-body">
-                    <h3>Meezan Bank</h3>
-                    <h3>PKR 10000</h3>
-                </div> -->
             </div>
         </div>
         <div class="chart-container">

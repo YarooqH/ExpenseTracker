@@ -1,8 +1,6 @@
 import { doc, getFirestore, updateDoc, setDoc, getDoc, arrayUnion, Timestamp, query, where, increment, getDocs, collection } from "firebase/firestore";
 import { app } from './firebaseInit';
 import DonutChart from 'donut-chart-js';
-// import { Chart } from 'chart.js'
-
 
 let db = getFirestore(app);
 
@@ -34,7 +32,6 @@ transactBtn.addEventListener("click", () => {
   let objCategory = document.querySelector('input[name="category"]:checked').value;
   
   var e = document.getElementById("transaction-dd");
-  // var value = e.value;
   var objMethod = e.options[e.selectedIndex].text;
 
   if(objAmount != "" || objType != "" || objCategory != "" || objMethod != ""){
@@ -193,7 +190,6 @@ const addTransaction = async () => {
     let userData = docSnap.data();
     getTransactionHistory(userData);
     calculateBalance(userData);
-    // getBalance();
     console.log("Document data:", docSnap.data());
   } else {
     console.log("No such document!");
@@ -229,14 +225,14 @@ const getTransactionHistory = async (userData) => {
   document.querySelector(".transaction-ul").innerHTML = html;
 }
 
-const getBalance = async () => {
-  const docLoc = doc(db, "user", userEmail);
+// const getBalance = async () => {
+//   const docLoc = doc(db, "user", userEmail);
 
-  const q = query(docLoc, where("category", "==", "Gifts"));
+//   const q = query(docLoc, where("category", "==", "Gifts"));
 
-  const querySnapshot = await getDoc(q);
-  console.log(querySnapshot);
-}
+//   const querySnapshot = await getDoc(q);
+//   console.log(querySnapshot);
+// }
 
 const getTransactionData = () => {
   // e.preventDefault();
@@ -245,7 +241,6 @@ const getTransactionData = () => {
   let objCategory = document.querySelector('input[name="category"]:checked').value;
   
   var e = document.getElementById("transaction-dd");
-  // var value = e.value;
   var objMethod = e.options[e.selectedIndex].text;
 
   var today = new Date();
@@ -306,8 +301,6 @@ const createChart = () => {
 
 btn.onclick = function() {
   modal.style.display = "block";
-  // getBalance();
-  // getData();
 }
 
 span.onclick = function() {

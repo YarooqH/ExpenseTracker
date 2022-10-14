@@ -1,6 +1,5 @@
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 import { app } from './firebaseInit'
-// import app from './firebaseInit'
 
 const auth = getAuth(app);
 
@@ -22,7 +21,6 @@ function signIn() {
     signInWithEmailAndPassword(auth, userEmail, userPass)
     .then((userCredential) => {
         location.href = './src/views/Dashboard.html';
-        // alert(userCredential.user.email + " has successfully logged in.")
     })
     .catch((error) => {
         const errorCode = error.code;
