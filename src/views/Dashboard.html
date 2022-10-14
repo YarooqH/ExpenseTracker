@@ -8,37 +8,61 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script deferc type="module" src="../controllers/dashboard.js"></script>
     <title>Expense Dashboard</title>
 </head>
 <body>
     <div class="left">
         <div class="transaction-input">
-            <h2>Add Transactions</h2>
-            <form action="">
-                <div class="contain">
-                    <input placeholder="Enter Amount" type="text" name="transaction" id="transaction">
-                    <select name="method" id="transaction">
-                        <option value="cash">Cash</option>
-                        <option value="saving">Savings</option>
-                    </select>
+                <h2>Add Transactions</h2>
+                <div class="new-container">
+                    <div class="contain">
+                        <input placeholder="Enter Amount" type="text" name="transaction" id="transaction">
+                        <select name="method" id="transaction-dd">
+                            <option value="Cash">Cash</option>
+                            <option value="Savings">Savings</option>
+                        </select>
+                    </div>
+                    <div class="pay-container">
+                        <input type="radio" name="payment" checked id="expense" value="Expense">
+                            <label for="expense">
+                                    <!-- <img src="../assets/Expense.png" alt="expense"> -->
+                                    <span>Expense</span>
+                            </label>
+                            
+                            <input type="radio" name="payment" id="income" value="Income">
+                            <label for="income">
+                                    <!-- <img src="../assets/Income.png" alt="income"> -->
+                                    <span>Income</span>
+                            </label>      
+                    </div>
                 </div>
-                <input type="radio" name="payment" id="card">
-                <label for="card">
-                    <img src="../assets/Income.png" alt="income">
-                    <span>Expense</span>
-                </label>
-                <input type="radio" name="payment" id="cash">
-                <label for="cash">
-                    <img src="../assets/Expense.png" alt="income">
-                    <span>Income</span>
-                </label>      
-            </form>
+                <!-- <div class="payment-container">
+                    <form action="">
+                        <input type="radio" name="payment" checked id="expense">
+                        <label for="expense">
+                            <div class="expense">
+                                <img src="../assets/Expense.png" alt="expense">
+                                <span>Expense</span>
+                            </div>
+                        </label>
+                        
+                        <input type="radio" name="payment" id="income">
+                        <label for="income">
+                            <div class="income">
+                                <img src="../assets/Income.png" alt="income">
+                                <span>Income</span>
+                            </div>
+                        </label>      
+                    </form>
+                </div> -->
         </div>
         <div class="category">
             <h2>Select Category</h2>
-            <form action="">
-                <input type="radio" id="home" name="category" value="Home">
+            <div class="cat-container"></div>
+            <!-- <form action="">
+                <input type="radio" id="home" name="category" value="Home" checked>
                 <label for="home">Home</label><br>
                 <input type="radio" id="office" name="category" value="office">
                 <label for="office">Office</label><br>
@@ -46,23 +70,24 @@
                 <label for="shopping">Shopping</label><br>
                 <input type="radio" id="family" name="category" value="family">
                 <label for="family">Family</label><br>
-                <!-- <button>+</button> -->
-            </form>
+            </form> -->
         </div>
-        <button>Add</button>
+        <button id="transact-btn">Add</button>
         <div class="history">
             <h3>Transactions History</h3>
-            <ul>
-                <li> <strong>Home</strong> </li>
-                <li> Meezan Bank </li>
-                <li> 10/Nov/2021 </li>
-                <li> Rs. 15000 </li>
-            </ul>
+            <div class="transaction-ul">
+                <ul>
+                    <li> <strong>Home</strong> </li>
+                    <li> Meezan Bank </li>
+                    <li> 10/Nov/2021 </li>
+                    <li> Rs. 15000 </li>
+                </ul>
+            </div>
         </div>
     </div>
     <div class="right">
         <div class="nav">
-            <h3>Name</h3>
+            <h3 id="username">Name</h3>
             <img src="../assets/user.png" alt="pfp">
         </div>
         <div class="details">
@@ -75,11 +100,11 @@
                 </div>
                 <div class="bank">
                     <h3>Bank</h3>
-                    <h4>0</h4>
+                    <h4 id="cur-bank">0</h4>
                 </div>
                 <div class="saving">
                     <h3>Savings</h3>
-                    <h4 id="cur-saving">0</h4>
+                    <h4 id="cur-savings">0</h4>
                 </div>
             </div>
         </div>
@@ -95,8 +120,9 @@
                 </div>
                 <div class="sub-body">
                     <h3>Savings</h3>
-                    <h3 class="cur-saving">PKR 0</h3>
+                    <h3 class="cur-savings">PKR 0</h3>
                 </div>
+                <div id="body"></div>
                 <!-- <div class="sub-body">
                     <h3>Meezan Bank</h3>
                     <h3>PKR 10000</h3>
@@ -105,7 +131,17 @@
         </div>
         <div class="chart-container">
             <h2>Overview</h2>
-            <div class="chart"></div>
+            <div class="chart">
+                <canvas id="myChart" width="200" height="200"></canvas>
+            </div>
+            <div class="legend">
+                <div class="e-legend">
+                    <p>Expense</p>
+                </div>
+                <div class="i-legend">
+                    <p>Income</p>
+                </div>
+            </div>
         </div>
     </div>
     <div id="myModal" class="modal">
@@ -118,7 +154,7 @@
                 <form action="">
                     <input type="text" placeholder="Enter Your Account Name" name="account-name" id="account-name">
                     <input type="number" placeholder="Enter Amount" name="account-amount" id="account-amount">
-                    <input type="button" value="Create Account">
+                    <input type="button" id="new-account-btn" value="Create Account">
                 </form>
             </div>
           
