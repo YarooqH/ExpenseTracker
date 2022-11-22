@@ -5,4 +5,3 @@
 - UI - Had a problem styling Radio Buttons (when applying display:flex on container divs the browser was overridding the display:flex to inline block (probably because of bad html) which was messing up the whole UI)
 
 - Select a Category when adding transaction (Cash/Savings)
-
