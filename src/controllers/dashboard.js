@@ -226,17 +226,7 @@ const getTransactionHistory = async (userData) => {
   document.querySelector(".transaction-ul").innerHTML = html;
 }
 
-// const getBalance = async () => {
-//   const docLoc = doc(db, "user", userEmail);
-
-//   const q = query(docLoc, where("category", "==", "Gifts"));
-
-//   const querySnapshot = await getDoc(q);
-//   console.log(querySnapshot);
-// }
-
 const getTransactionData = () => {
-  // e.preventDefault();
   let objAmount = document.querySelector("#transaction").value;
   let objType = document.querySelector('input[name="payment"]:checked').value;
   let objCategory = document.querySelector('input[name="category"]:checked').value;
