@@ -25,7 +25,6 @@ window.onload = () => {
   usernameTxt.innerText = userEmail;
 }
 
-
 transactBtn.addEventListener("click", () => {
   let objAmount = document.querySelector("#transaction").value;
   let objType = document.querySelector('input[name="payment"]:checked').value;
